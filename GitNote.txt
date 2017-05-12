@@ -1,0 +1,22 @@
+pwd					显示当前目录
+git init    		命令把这个目录变成Git可以管理的仓库
+ls -ah      		显示隐藏
+git add     		把文件添加到仓库
+git commit  		把文件提交到仓库
+	git commit -m "wrote a readme file"
+git status			仓库当前的状态
+git diff			具体修改
+git log				历史记录
+	git log --pretty=oneline
+git reset			版本回退
+	git reset --hard HEAD^
+	git reset --HEAD~100
+	git reset --hard 3628164
+git reflog			记录每一次命令
+git checkout --		工作区的修改全部撤销,回到最近一次git commit或git add时的状态
+git reset HEAD file	把暂存区的修改撤销掉（unstage），重新放回工作区
+git rm				把文件从仓库删除
+git push origin master	推送最新修改
+git clone			命令克隆
+	git clone git@github.com:q2wxec/Study.git
+
