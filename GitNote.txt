@@ -21,4 +21,4 @@ git clone			命令克隆
 	git clone git@github.com:q2wxec/gitskills.git
 git checkout -b     参数表示创建并切换
 	git checkout -b dev  (git branch dev  git checkout dev)
-	
+no no 弄
