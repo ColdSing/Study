@@ -1,7 +1,7 @@
 pwd					显示当前目录
 git init    		命令把这个目录变成Git可以管理的仓库
 ls -ah      		显示隐藏
-git add     		把文件添加到仓库
+git add <name>    	把文件添加到仓库
 git commit  		把文件提交到仓库
 	git commit -m "wrote a readme file"
 git status			仓库当前的状态
@@ -16,16 +16,23 @@ git reset			版本回退
 git reflog			记录每一次命令
 git checkout --		工作区的修改全部撤销,回到最近一次git commit或git add时的状态
 git reset HEAD file	把暂存区的修改撤销掉（unstage），重新放回工作区
-git rm				把文件从仓库删除
+git rm <name>		把文件从仓库删除
 git push origin master	推送最新修改
 git clone			命令克隆
 	git clone git@github.com:q2wxec/gitskills.git
 git checkout -b     参数表示创建并切换
-	git checkout -b dev  (git branch dev  git checkout dev)
-git checkout 	  	切换分支
-git branch			创建分支
-git checkout -b dev	创建并切换到分支dev
-git merge			合并指定分支到当前分支
+	git checkout -b <name>  (git branch dev  git checkout dev)
+git checkout <name>	切换分支
+git branch <name>	创建分支
+git checkout -b <name>创建并切换到分支dev
+git merge <name>	 合并指定分支到当前分支
 	git merge --no-ff -m "merge with no-ff" dev
-git branch -d dev	删除dev分支	
+git branch -d <name>删除分支	
+git branch -D <name>强行删除
+git stash			把当前工作现场“储藏”起来
+	git stash list
+	git stash apply	恢复
+	git stash drop	删除
+	git stash pop 	恢复同时把stash内容也删了
+	git stash apply stash@{0}恢复指定的stash
 
