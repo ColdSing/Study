@@ -19,6 +19,13 @@ git rm				把文件从仓库删除
 git push origin master	推送最新修改
 git clone			命令克隆
 	git clone git@github.com:q2wxec/gitskills.git
+<<<<<<< HEAD
 git checkout -b     参数表示创建并切换
 	git checkout -b dev  (git branch dev  git checkout dev)
-no no 弄
+=======
+git checkout 	  	切换分支
+git branch			创建分支
+git checkout -b dev	创建并切换到分支dev
+git merge			合并指定分支到当前分支
+git branch -d dev	删除dev分支	
+>>>>>>> feature1
