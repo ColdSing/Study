@@ -39,8 +39,8 @@ def main():
     p.pendown()# Pull the pen down – drawing when moving. 这三条语句是一个组合相当于先把笔收起来再移动到指定位置，再把笔放下开始画
     #否则turtle一移动就会自动的把线画出来
 
-    #t = tree([p], 200, 65, 0.6375)
-    t = tree([p], 200, 65, 0.6375)
+    #t = tree([p], 200, 60, 0.5)
+    t = tree([p], 200, 60, 0.5)
     
 main()
 
