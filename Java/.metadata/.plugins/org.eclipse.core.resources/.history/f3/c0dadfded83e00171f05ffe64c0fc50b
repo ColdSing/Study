@@ -1,0 +1,38 @@
+package mycastle;
+
+import java.util.HashMap;
+
+public class Room {
+	private String name;
+	private HashMap<String ,Room> doors =new HashMap<String ,Room>(); 
+	public Room(String name) {
+		this.name=name;
+	}
+	
+	public void setDoor(String dir,Room room){
+		doors.put(dir, room);
+	}
+	
+	public String showName(){
+		return this.name;
+	}
+	
+	public String showDoor(){
+		StringBuffer sd = new StringBuffer();
+		for(String door : doors.keySet()){
+			sd.append(door);
+			sd.append(" ");
+		}
+		return sd.toString();
+	}
+	
+	public Room exit(String dir){
+		return doors.get(dir);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

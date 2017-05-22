@@ -1,0 +1,9 @@
+package mycastle;
+
+public class Water {
+	
+	public void change(int i){
+		
+		return null;
+	}
+}

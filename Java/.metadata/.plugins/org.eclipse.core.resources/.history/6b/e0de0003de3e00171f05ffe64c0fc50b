@@ -1,0 +1,15 @@
+package mycastle;
+
+import java.util.HashMap;
+
+public class Water {
+	private int statu;
+	private HashMap<Integer,String> status = new HashMap<Integer,String>();
+	public void change(int i){
+		
+		
+	}
+	public String showstatu(){
+		
+	}
+}

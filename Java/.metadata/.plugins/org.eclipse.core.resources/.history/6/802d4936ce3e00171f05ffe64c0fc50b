@@ -1,0 +1,5 @@
+package mycastle;
+
+public class HandlerGo extends Handler {
+
+}

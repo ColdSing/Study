@@ -1,0 +1,13 @@
+package mycastle;
+
+public class HandlerGo extends Handler {
+	private Room r;
+
+	public HandlerGo(Room r) {
+		super(r);
+	}
+
+	public void doCmd(String value){
+		
+	}
+}

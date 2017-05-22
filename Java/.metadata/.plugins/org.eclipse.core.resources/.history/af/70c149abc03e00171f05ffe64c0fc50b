@@ -1,0 +1,17 @@
+package mycastle;
+
+import java.util.HashMap;
+
+public class Room {
+	private String name;
+	private HashMap<String ,Room> door =new HashMap<String ,Room>(); 
+	public Room(String name) {
+		this.name=name;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

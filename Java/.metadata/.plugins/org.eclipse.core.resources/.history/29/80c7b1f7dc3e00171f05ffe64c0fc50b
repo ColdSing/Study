@@ -1,0 +1,10 @@
+package mycastle;
+
+public class Ice extends Water {
+
+	public Ice(Game g) {
+		super(g);
+		// TODO Auto-generated constructor stub
+	}
+
+}
