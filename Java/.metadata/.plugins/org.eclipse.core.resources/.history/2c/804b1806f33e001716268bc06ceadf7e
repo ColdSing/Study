@@ -79,9 +79,6 @@ public class Game {
 			if(hd!=null){
 				hd.doCmd(value);
 				if(player.showstatu().equals("冰")&&currentroom.showName().equals("城堡外")||hd.bye()){
-					if(player.showstatu().equals("冰")&&currentroom.showName().equals("城堡外")){
-						System.out.println("算你狠，成功了");	
-					}
 					break;
 				}
 			}
