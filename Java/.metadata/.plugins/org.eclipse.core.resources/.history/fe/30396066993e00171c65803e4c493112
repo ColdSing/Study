@@ -1,0 +1,7 @@
+package castle;
+
+public class handler {
+	
+	public void docmd(String s){}
+
+}

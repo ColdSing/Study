@@ -1,0 +1,24 @@
+package castle;
+
+import java.util.HashMap;
+
+public class Room {
+    public String description;
+    private HashMap<String,Room> exit= new HashMap<String,Room>();  
+
+    public Room(String description) 
+    {
+        this.description = description;
+    }
+
+    public void setExits(String direction,Room room) 
+    {
+        exit.put(direction, room);
+    }
+
+    @Override
+    public String toString()
+    {
+        return description;
+    }
+}
