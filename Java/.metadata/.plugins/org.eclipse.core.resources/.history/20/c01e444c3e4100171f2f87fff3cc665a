@@ -1,0 +1,62 @@
+package smg;
+
+import java.util.Scanner;
+
+public class Main {
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner in = new Scanner(System.in);
+	int N = in.nextInt();
+	int L = in.nextInt();
+	int H = in.nextInt();
+	Student[] stu1 = new Student[N];
+	Student[] stu2 = new Student[N];
+	Student[] stu3 = new Student[N];
+	Student[] stu4 = new Student[N];
+	int count1=0,count2=0,count3=0,count4=0;
+	for(int i=0;i<N;i++)
+	{
+		int a,b,c;
+		a=in.nextInt();
+		b=in.nextInt();
+		c=in.nextInt();
+		if(b>=H&&c>=H)
+		{
+			
+		}
+		else if(b>=H&&c>=L)
+		{
+			
+		}
+		else if(b>=L&&c>=L&&b>=c)
+		{
+			
+		}
+		else if(b>=L&&c>=L)
+		{
+			
+		}
+	}
+	
+	
+	}
+
+}
+
+class Student{
+	private int num;
+	private int scor1;
+	private int scor2;
+	public void getNum(int num){
+		this.num=num;
+	}
+	public void getScor1(int scor1){
+		this.scor1=scor1;
+	}
+	public void getScor2(int scor2){
+		this.scor2=scor2;
+	}
+	
+}

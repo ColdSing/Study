@@ -1,0 +1,23 @@
+package smg;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Scanner in = new Scanner(System.in);
+	int N = in.nextInt();
+	int L = in.nextInt();
+	int H = in.nextInt();
+	int [][] student = new int [N][3];
+	for(int i=0;i<N;i++)
+	{
+		int a,b,c;
+		student[i][0]=in.nextInt();
+		student[i][1]=in.nextInt();
+		student[i][2]=in.nextInt();
+	}
+	}
+
+}
