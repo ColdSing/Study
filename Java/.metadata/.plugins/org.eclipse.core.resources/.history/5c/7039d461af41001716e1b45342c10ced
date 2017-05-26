@@ -1,0 +1,11 @@
+
+
+public interface MyInterface {
+	//接口中只有：常量、抽象方法！
+	//一个类可以实现多个接口
+	/*public static final */int MAX_SPEED = 120;
+	String MAX_GREAD ="BOSS";
+	//接口方法必须public公开
+	public void test01();
+	public int test02();
+}

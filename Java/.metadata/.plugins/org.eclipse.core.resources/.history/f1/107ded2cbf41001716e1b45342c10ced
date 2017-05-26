@@ -1,0 +1,13 @@
+package MyArray;
+
+public class Test01 {
+	public static void main(String[] args){
+		//数组的声明
+		int[] a;
+		int b[];
+		//创建数组
+		a=new int[4];
+		b=new int[5];
+		//初始化
+	}
+}

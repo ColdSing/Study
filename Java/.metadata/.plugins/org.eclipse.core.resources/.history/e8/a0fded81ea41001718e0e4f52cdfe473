@@ -1,0 +1,17 @@
+package MyList;
+
+public class MyArrayList {
+	StringBuilder s;
+	Object[] value;
+	int count;
+	
+	public MyArrayList(int capacity) {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

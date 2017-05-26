@@ -1,0 +1,27 @@
+package MyList;
+
+public class MyArrayList {
+	StringBuilder s;
+	Object[] value;
+	int count;
+	
+	public MyArrayList() {
+		value =new Object[16];
+	}
+	public MyArrayList(int capacity) {
+		value =new Object[capacity];
+	}
+	
+	public void add(Object obj){
+		value[count++]=obj;
+	}
+	
+	public Object get(int index){
+		return value[index];
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

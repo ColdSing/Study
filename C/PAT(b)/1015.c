@@ -65,7 +65,7 @@ void sort(STU s[],int n)
 	}
 }
 
-int cmp (const void *a,const void*b)
+int cmp (const void *a,const void*b)//qsort函数通过返回值的正负排序降序负值，升序正值，适用于结构体。
 {
 	STU *aa = (STU *)a;
 	STU *bb = (STU *)b;

@@ -54,7 +54,11 @@ public class Main {
 	Collections.sort(stu4);print(stu4);
 	}
 }
-
+/**
+ * 引用接口Comparable
+ * @author 风潇潇
+ *类似于qsort
+ */
 class Student implements Comparable<Student>{
 	private int num;
 	private int scor1;
