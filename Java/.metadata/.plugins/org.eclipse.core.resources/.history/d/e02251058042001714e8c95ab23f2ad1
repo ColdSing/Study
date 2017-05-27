@@ -1,0 +1,11 @@
+package data;
+
+import java.util.Date;
+
+public class TestTime {
+	
+	public static void main(String[] args){
+		Date d = new Date(1000);
+		System.out.println(d.getTime());
+	}
+}

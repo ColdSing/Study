@@ -48,11 +48,11 @@ int main (void)
 			count4++;
 		}
 	}
+	printf("%d\n",count1+count2+count3+count4);
 	sort(stu1,count1);
 	sort(stu2,count2);
 	sort(stu3,count3);
 	sort(stu4,count4);
-	printf("%d\n",count1+count2+count3+count4);
 }
 
 

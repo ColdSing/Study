@@ -8,7 +8,8 @@ int main (void)
 {
 	int A,DA,B,DB;
 	scanf("%d %d %d %d",&A,&DA,&B,&DB);
-	return part(A,DA)+part(B,DB);
+	printf("%d",part(A,DA)+part(B,DB));
+	return 0;
 }
 
 int part(int A,int DA)
@@ -19,7 +20,7 @@ int part(int A,int DA)
 	int count=1;
 	for(int i=0;i<strlen(s);i++)
 	{
-		if(atoi(s[i])==DA)
+		if(s[i]-'0'==DA)
 		{
 			PA=PA+count*DA;
 			count*=10;
