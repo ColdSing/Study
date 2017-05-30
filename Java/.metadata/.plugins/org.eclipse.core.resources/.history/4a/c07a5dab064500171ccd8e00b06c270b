@@ -1,0 +1,79 @@
+package game;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+import fxx.util.GameUtil;
+import fxx.util.MyFrame;
+
+public class PlaneGameFrame extends MyFrame{
+	KeyBoard kb =new KeyBoard();
+	Image bg = GameUtil.getImage("images/bg.jpg");
+	Plane plane = new Plane("images/plane.png",230,420);
+	ArrayList bulletList = new ArrayList();
+	int numOfBullet = 10;
+	boolean start=false;
+	public void paint(Graphics g){
+		g.drawImage(bg, 0, 0, null);
+		if(!start){
+			startdraw(g);
+		}
+		
+	}
+	
+	public void startdraw(Graphics g){
+		Color c=g.getColor();
+		Font f=g.getFont();
+		g.setFont(new Font("ËÎÌå", Font.BOLD, 80));
+		g.setColor(new Color(255,255,255));
+		g.drawString("ÌØÑµ", 170, 420);
+		g.setFont(f);
+		g.setColor(c);
+	}
+	public void playingdraw(Graphics g){
+		plane.draw(g);
+		for(int i=0;i<numOfBullet;i++){
+			Bullet b = (Bullet)bulletList.get(i);
+			b.draw(g);
+			boolean collapse=b.getRect().intersects(plane.getRect());
+			if(collapse){
+				start = false;
+				break;
+			}
+	}
+	public void launchFram(){
+		super.launchFram();
+		addKeyListener(kb);
+		for(int i=0 ;i<numOfBullet;i++){
+			Bullet b= new Bullet();
+			bulletList.add(b);
+		}
+	}
+	
+	
+	class KeyBoard extends KeyAdapter{
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			plane.addDirection(e);
+			if(e.getKeyCode()==10){
+				start=true;
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			plane.cutDirection(e);
+		}
+		
+	}
+	public static void main(String[] args){
+		PlaneGameFrame PGF =new PlaneGameFrame();
+		PGF.launchFram();
+	}
+}

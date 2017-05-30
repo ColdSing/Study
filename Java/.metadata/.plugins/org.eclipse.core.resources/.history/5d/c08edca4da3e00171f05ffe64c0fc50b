@@ -1,5 +1,0 @@
-package mycastle;
-
-public class Vapor extends Water {
-
-}

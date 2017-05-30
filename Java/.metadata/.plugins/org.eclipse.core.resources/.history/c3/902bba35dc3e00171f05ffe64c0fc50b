@@ -1,9 +1,0 @@
-package mycastle;
-
-public class Water {
-	protected Game g;
-	public Water(Game g) {
-		this.g = g;
-	}
-	
-}

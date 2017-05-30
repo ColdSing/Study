@@ -1,0 +1,13 @@
+package fxx.solar;
+
+import java.awt.Image;
+
+public class Satellite extends Planet {
+	Planet P;
+	public Satellite(Planet P, Image i, double speed) {
+		super(i);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+}

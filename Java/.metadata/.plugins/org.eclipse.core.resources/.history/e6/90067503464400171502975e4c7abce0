@@ -1,0 +1,18 @@
+package game;
+
+import java.awt.Image;
+
+import fxx.util.GameUtil;
+
+public class Plane {
+	Image I;
+	double x,y;
+	boolean left,right,up,down;
+	public Plane(String imgPath, double x, double y) {
+		I = GameUtil.getImage(imgPath);
+		this.x = x;
+		this.y = y;
+	}
+	
+	
+}

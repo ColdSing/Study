@@ -1,0 +1,13 @@
+package fileclass;
+
+import java.io.File;
+
+public class TestFile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File f= new File("G:/Study/Java/maxlist/src/maxlist");
+		System.out.println(f.canExecute());
+	}
+
+}

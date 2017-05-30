@@ -1,7 +1,0 @@
-package mycastle;
-
-public class HandlerGo extends Handler {
-	public void doCmd(String value){
-		
-	}
-}

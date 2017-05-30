@@ -1,0 +1,16 @@
+package fxx.solar;
+
+import java.awt.Image;
+
+public class Satellite extends Planet {
+	private Planet P;
+	public Satellite(Image i, double x, double speed,Planet p) {
+		super(i, x, speed);
+		this.P = p;
+	}
+	
+	
+	
+	
+
+}

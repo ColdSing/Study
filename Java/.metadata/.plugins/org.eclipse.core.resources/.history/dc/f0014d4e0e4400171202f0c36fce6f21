@@ -1,0 +1,51 @@
+package fxx.solar;
+
+
+
+
+import java.awt.Image;
+
+import fxx.util.Constant;
+
+public class Planet extends stars{
+	protected double degree=Math.PI/2;
+	protected double speed;
+	protected double longaxis;
+	protected double shortaxis;
+	public Planet(Image i, double x, double y, double degree, double speed) {
+		this.I = i;
+		this.x = x;
+		this.y = y;
+		this.degree = degree;
+		this.speed = speed;
+		this.longaxis = Constant.GAME_WIDTH/2-x;
+		this.b = this.longaxis*2/3;
+	}
+	public Planet(Image i, double x, double speed){
+		this.I = i;
+		this.x = x;
+		this.speed = speed;
+		this.longaxis = Constant.GAME_WIDTH/2-x;
+		this.b = this.longaxis*2/3;
+	}
+	public void move(){
+		this.degree+=speed;
+		this.x=Constant.GAME_WIDTH/2+longaxis*Math.cos(degree);
+		this.y=Constant.GAME_HEIGHT/2-b*Math.sin(degree);
+	}
+	public double getA(){
+		return longaxis;
+	}
+	public double getB(){
+		return b;
+	}
+	public Image getImage(){
+		return I;
+	}
+	public double getX(){
+		return x;
+	}
+	public double getY(){
+		return y;
+	}
+}

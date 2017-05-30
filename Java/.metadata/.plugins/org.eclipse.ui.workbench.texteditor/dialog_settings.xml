@@ -2,16 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="forth" key="selection"/>
+		<item value="protected" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="private"/>
+			<item value="sun"/>
+			<item value="paint"/>
+			<item value="\"/>
 			<item value="third"/>
 			<item value="second"/>
 		</list>
 		<list key="replacehistory">
+			<item value="protected"/>
+			<item value="earth"/>
+			<item value="/"/>
 			<item value="forth"/>
 			<item value="third"/>
 		</list>
@@ -20,7 +27,7 @@
 		<item value="300" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="410" key="DIALOG_HEIGHT"/>
-		<item value="362" key="DIALOG_X_ORIGIN"/>
-		<item value="111" key="DIALOG_Y_ORIGIN"/>
+		<item value="867" key="DIALOG_X_ORIGIN"/>
+		<item value="94" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

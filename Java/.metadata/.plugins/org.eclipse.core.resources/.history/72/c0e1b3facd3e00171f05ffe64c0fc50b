@@ -1,9 +1,0 @@
-package mycastle;
-
-public class Handler {
-	private Game g;
-	public void doCmd(){}
-	public boolean bye(){
-		return false;
-	}
-}

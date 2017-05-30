@@ -1,0 +1,22 @@
+package fxx.solar;
+
+import java.awt.Image;
+
+public class Satellite extends Planet {
+	
+	private Planet P;
+	private double distance;
+	public Satellite(Image i, double x, double speed,Planet p) {
+		super(i, x, speed);
+		this.P = p;
+		this.distance=P.getX()-x;
+	}
+	
+	@Override
+	public void move() {
+		
+	}
+	
+	
+
+}

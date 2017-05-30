@@ -1,6 +1,0 @@
-package mycastle;
-
-public class Water {
-	protected Game g;
-	
-}

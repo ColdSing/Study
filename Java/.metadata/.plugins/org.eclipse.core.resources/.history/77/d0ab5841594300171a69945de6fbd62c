@@ -1,0 +1,14 @@
+package Fxx.test;
+
+import java.awt.Image;
+
+public class GameUtil {
+	public static Image getImage(String path){
+		URL u = GameUtil.class.getClassLoader().getResource(path);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

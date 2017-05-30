@@ -1,0 +1,23 @@
+package MyException;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+public class MyException {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub 
+			try {
+				FileReader reader = new FileReader("d:/a.txt");
+				char temp = (char)reader.read();
+				System.out.println("¶Á³öµÄÄÚÈÝ£º"+temp);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
+		
+	}
+
+}

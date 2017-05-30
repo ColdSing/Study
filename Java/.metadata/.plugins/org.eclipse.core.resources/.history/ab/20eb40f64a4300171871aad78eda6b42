@@ -1,0 +1,10 @@
+package Fxx.test;
+
+public class GameFram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

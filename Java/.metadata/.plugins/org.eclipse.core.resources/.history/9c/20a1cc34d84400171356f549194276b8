@@ -1,0 +1,31 @@
+package game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import fxx.util.Constant;
+
+public class Bullet {
+	protected Image img;
+	protected double x,y;
+	protected double degree;
+	protected double speed;
+	protected int width,height;
+	
+	public Bullet(){
+		this.x=Constant.GAME_WIDTH/2;
+		this.y=Constant.GAME_HEIGHT/2;
+		width=10;
+		height=10;
+		speed=3;
+	}
+	
+	public void draw(Graphics g){
+		g.fillOval((int)x, (int)y, width, height);
+		move();
+	}
+	public void move(){
+		
+	}
+	
+}

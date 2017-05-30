@@ -1,7 +1,0 @@
-package mycastle;
-
-public class HandlerBye extends Handler {
-	public boolean bye(){
-		return true;
-	}
-}

@@ -1,0 +1,19 @@
+package fileclass;
+
+import java.io.File;
+
+public class TestFile {
+	public static void printfile(File F,int level){
+		for(int i=0;i<level;i++){
+			System.out.print("-");
+		}
+		System.out.println(F.getName());
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		File f= new File("G:");
+		System.out.println(f.toString());
+	}
+
+}

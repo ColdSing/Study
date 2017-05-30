@@ -1,0 +1,45 @@
+package fxx.solar;
+
+
+
+
+import java.awt.Image;
+
+import fxx.util.Constant;
+import fxx.util.GameUtil;
+
+
+public class Planet extends Star{
+	protected Star center;
+	protected double longaxis;
+	protected double shortaxis;
+	protected double degree=Math.PI/2;
+	protected double speed;
+	protected boolean satellite =false ;
+
+	public Planet(Star center,String imgPath,double longaxis,double shortaxis,double speed){
+		super(GameUtil.getImage(imgPath));
+		this.center=center;
+		this.longaxis=longaxis;
+		this.shortaxis=shortaxis;
+		this.speed =speed;
+	}
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+	public void move(){
+		this.degree+=speed;
+		this.x=Constant.GAME_WIDTH/2+longaxis*Math.cos(degree);
+		this.y=Constant.GAME_HEIGHT/2-b*Math.sin(degree);
+	}
+	
+}

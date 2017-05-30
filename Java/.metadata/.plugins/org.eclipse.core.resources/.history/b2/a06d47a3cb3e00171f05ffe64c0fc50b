@@ -1,5 +1,0 @@
-package mycastle;
-
-public class HandlerHelp extends Handler {
-
-}

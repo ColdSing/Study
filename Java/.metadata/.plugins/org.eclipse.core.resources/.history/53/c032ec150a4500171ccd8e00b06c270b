@@ -1,0 +1,61 @@
+package game;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
+
+import fxx.util.Constant;
+import fxx.util.GameUtil;
+
+public class Plane extends GameObjects{
+
+	protected boolean left,right,up,down;
+
+	public Plane(String imgPath, double x, double y) {
+		I = GameUtil.getImage(imgPath);
+		this.width = I.getWidth(null);
+		this.height = I.getHeight(null);
+		this.x = x;
+		this.y = y;
+		speed=3;
+	}
+	
+	public Rectangle getRect(){
+		return new Rectangle((int)x,(int)y,width,height);
+	}
+	
+	public void draw(Graphics g){
+		super.draw(g);
+		move();
+	}
+	
+	public void move(){
+		if(x<=10){left=false;}
+		if(x>=Constant.GAME_WIDTH-width-10){right=false;}
+		if(y<=30){up = false;}
+		if(y>=Constant.GAME_HEIGHT-height-10){down=false;}
+		if(left){x-=10;}
+		if(right){x+=10;}
+		if(up){y-=10;}
+		if(down){y+=10;}
+		
+	}
+	public void addDirection(KeyEvent e){
+		switch(e.getKeyCode()){
+			case 37: left =true;break;
+			case 38: up =true;break;
+			case 39: right =true;break;
+			case 40: down =true;break;
+		}	
+	}
+	public void cutDirection(KeyEvent e){
+		switch(e.getKeyCode()){
+			case 37: left =false;break;
+			case 38: up =false;break;
+			case 39: right =false;break;
+			case 40: down =false;break;
+		}
+	}
+	
+}

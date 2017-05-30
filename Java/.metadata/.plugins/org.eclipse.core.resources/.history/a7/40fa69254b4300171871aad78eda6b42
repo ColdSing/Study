@@ -1,0 +1,18 @@
+package Fxx.test;
+
+import java.awt.Frame;
+
+/**
+ * 游戏窗口类
+ * @author 风潇潇
+ *
+ */
+public class GameFram extends Frame {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

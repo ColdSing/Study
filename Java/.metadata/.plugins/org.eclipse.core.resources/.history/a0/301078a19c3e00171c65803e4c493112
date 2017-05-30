@@ -1,7 +1,0 @@
-package castle;
-
-public class Handler {
-	
-	public void docmd(String s){}
-	public void doBye(String s){}
-}

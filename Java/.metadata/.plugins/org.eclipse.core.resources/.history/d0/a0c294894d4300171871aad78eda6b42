@@ -1,0 +1,48 @@
+package Fxx.test;
+
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+/**
+ * 游戏窗口类
+ * @author 风潇潇
+ *
+ */
+public class GameFram extends Frame {		//GUI编程：AWT，swing等。
+	/**
+	 * 加载窗口
+	 */
+	public void launchFram(){
+		setSize(500,500);
+		setLocation(100,100);
+		setVisible(true);
+		
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				super.windowClosing(e);{
+					System.exit(0);
+				}
+			}
+			
+		});
+	}
+	/**
+	 * 重写paint
+	 */
+	@Override
+	public void paint(Graphics g) {
+		g.drawOval(100, 100, 200, 100);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GameFram gf = new GameFram();
+		gf.launchFram();
+	}
+
+}
