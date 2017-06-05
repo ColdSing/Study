@@ -1,0 +1,45 @@
+package util;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Sort {
+	public static  void binnerySort(Object[] list){
+		if(list.length>1){
+			int[] list1=Arrays.copyOfRange(list, 0, list.length/2);
+			int[] list2=Arrays.copyOfRange(list, list.length/2, list.length);
+			binnerySort(list1);
+			binnerySort(list2);
+			int n1=0,n2=0;
+			for(int i=0;i<list.length;i++){
+				if(n1<list1.length&&n2<list2.length){
+					if(list1[n1]<list2[n2]){
+						list[i]=list1[n1++];
+					}
+					else{
+						list[i]=list2[n2++];
+					}
+				}
+				else if(n1<list1.length){
+					list[i]=list1[n1++];
+				}
+				else if(n2<list2.length){
+					list[i]=list2[n2++];
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args){
+		List<String> list = new ArrayList<String>();
+		list.add("aaa");
+		list.add("a");
+		list.add("abs");
+		list.add("abc");
+		list.add("def");
+		binnerySort(list);
+		System.out.println(list);
+		
+	}
+}

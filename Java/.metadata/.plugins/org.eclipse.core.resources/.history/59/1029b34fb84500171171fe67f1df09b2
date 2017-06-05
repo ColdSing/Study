@@ -1,0 +1,9 @@
+package fxx.collection;
+
+public class MyArrayList {
+	List list = new LinkedList();
+	public static void main(String[] args) {
+		
+	}
+
+}

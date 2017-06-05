@@ -1,5 +1,0 @@
-package smg;
-
-public interface MyInterface {
-
-}

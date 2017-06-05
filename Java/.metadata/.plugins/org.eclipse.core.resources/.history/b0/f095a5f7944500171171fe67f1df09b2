@@ -1,0 +1,14 @@
+package fxx.collection;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class test01 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List list = new ArrayList();
+	}
+
+}

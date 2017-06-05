@@ -1,0 +1,6 @@
+package generic;
+
+public class Student<T1,T2> {
+	T1 score;
+	T2 name;
+}

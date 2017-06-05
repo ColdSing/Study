@@ -1,0 +1,41 @@
+package fxx.com.stu;
+
+import java.util.LinkedList;
+
+public class Student implements Comparable<Student> {
+	private String name;
+	private String adress;
+	private int score;
+	
+	public Student(String name, String adress, int score) {
+		super();
+		this.name = name;
+		this.adress = adress;
+		this.score = score;
+	}
+	@Override
+	public int compareTo(Student o) {
+		int n =o.score;
+		if(this.score>n){
+			return 1;
+		}
+		else if(this.score<n){
+			return -1;
+		}
+		else{
+			return 0;	
+		}
+		
+	}
+	public static void main(String[] args) {
+
+		LinkedList<Student> students=new LinkedList<>();
+		students.add(new Student("a","aa",98));
+		students.add(new Student("b","bb",97));
+		students.add(new Student("c","cc",99));
+		students.add(new Student("d","aa",97));
+	}
+
+	
+
+}

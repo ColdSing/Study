@@ -1,0 +1,38 @@
+package util;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Sort {
+	public static <T> void binnerySort(List<T> list){
+		if(list.size()>1){
+			List list1=list.subList(0, list.size()/2);
+			List list2=list.subList( list.size()/2,list.size());
+			binnerySort(list1);
+			binnerySort(list2);
+			int n1=0,n2=0;
+			for(int i=0;i<list.size();i++){
+				if(n1<list1.size()&&n2<list2.size()){
+					if(((Comparable)(list1.get(n1))).compareTo(list1.get(n2))<0){
+						list.set(i, (T)list1.get(n1));
+					}
+					else{
+						list.set(i, (T)list2.get(n2));
+					}
+				}
+				else if(n1<list1.size()){
+					list.set(i, (T)list1.get(n1));
+				}
+				else if(n2<list2.size()){
+					list.set(i, (T)list2.get(n2));
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args){
+		int[] arr ={2,8,5,6,9,7,5,6,4,3};
+		binnerySort(arr);
+		System.out.println(Arrays.toString(arr)) ;
+	}
+}

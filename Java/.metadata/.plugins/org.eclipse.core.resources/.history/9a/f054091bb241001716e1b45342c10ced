@@ -1,8 +1,0 @@
-package callback;
-
-public class PaintFrame {
-	public static void drawFrame(MyFrame f){
-		
-		f.paint();//hook,通过不同子类对方法重写
-	}
-}

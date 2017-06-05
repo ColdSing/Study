@@ -1,0 +1,12 @@
+package fxx.collection;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class MyArrayList {
+	List list = new LinkedList();
+	public static void main(String[] args) {
+		
+	}
+
+}

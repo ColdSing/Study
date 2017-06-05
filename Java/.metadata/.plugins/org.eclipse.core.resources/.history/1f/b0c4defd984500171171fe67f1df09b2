@@ -1,0 +1,19 @@
+package fxx.collection;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class test01 {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List list = new ArrayList();
+		List list2 = new ArrayList();
+		list2.add("aaa");
+		list2.add("bbb");
+		list.addAll(list2);
+		System.out.println(list.size());
+	}
+
+}
