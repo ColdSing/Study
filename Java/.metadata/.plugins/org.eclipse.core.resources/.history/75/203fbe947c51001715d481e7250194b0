@@ -1,0 +1,13 @@
+package MySever;
+
+public class Severlet {
+	private Request req;
+	private Request rep;
+	public Severlet(Request req, Request rep) {
+		rep.contentPrintln("<html><head><title>HTTPÏìÓ¦Ê¾Àı</title>");
+		rep.contentPrintln("</head><body>Hello,"+req.getClientValue("username")+"</body></html>");
+		rep.pushToClient(200);
+	}
+	
+	
+}

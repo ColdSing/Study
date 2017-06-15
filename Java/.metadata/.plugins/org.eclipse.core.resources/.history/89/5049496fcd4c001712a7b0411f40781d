@@ -1,0 +1,23 @@
+package threadstatus;
+
+public class ThreadStatus {
+
+	public static void main(String[] args) {
+
+	}
+	
+}
+
+class Study implements Runnable{
+	private boolean flag=true;
+	@Override
+	public void run() {
+		while(flag){
+			System.out.println("study thread...");
+		}
+	}
+	public void stop(){
+		this.flag=false;
+	}
+	
+}

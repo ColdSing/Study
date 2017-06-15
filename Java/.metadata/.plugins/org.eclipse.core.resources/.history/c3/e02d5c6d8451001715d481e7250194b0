@@ -1,0 +1,12 @@
+package MySever;
+
+import java.io.IOException;
+
+public class Severlet{
+	public Severlet(Request req, Response rep) throws IOException {
+		rep.contentPrintln("<html><head><title>HTTPÏìÓ¦Ê¾Àý</title>");
+		rep.contentPrintln("</head><body>Hello,"+req.getClientValue("username")+"</body></html>");
+		rep.pushToClient(200);
+	}
+
+}

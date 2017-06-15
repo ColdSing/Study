@@ -1,0 +1,27 @@
+package MySever;
+
+import java.io.IOException;
+
+public class Severlet implements Runnable{
+	private Request req;
+	private Response rep;
+	
+	public Severlet(Request req, Response rep) throws IOException {
+		this.rep=rep;
+		this.req=req;
+	}
+
+	@Override
+	public void run() {
+		rep.contentPrintln("<html><head><title>HTTPÏìÓ¦Ê¾Àý</title>");
+		rep.contentPrintln("</head><body>Hello,"+req.getClientValue("username")+"</body></html>");
+		try {
+			rep.pushToClient(200);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

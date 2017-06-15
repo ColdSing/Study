@@ -1,0 +1,10 @@
+package MySever;
+
+public class Dispatch implements Runnable{
+
+	@Override
+	public void run() {
+		
+	}
+
+}

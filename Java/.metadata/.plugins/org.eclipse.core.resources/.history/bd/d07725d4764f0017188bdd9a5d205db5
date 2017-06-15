@@ -1,0 +1,65 @@
+package chatroom;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Client {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		Socket client = new Socket("localhost",8888);
+		DataInputStream dis = new DataInputStream(client.getInputStream());
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		DataOutputStream dos = new DataOutputStream(client.getOutputStream());
+		Thread in = new Thread(new Input(dis));
+		Thread out = new Thread(new Output(dos,br));
+		
+		
+	}
+	
+
+}
+
+class Input implements Runnable{
+	DataInputStream dis;
+	public Input(DataInputStream dis) {
+		this.dis = dis;
+	}
+	@Override
+	public void run() {
+		String s=null;
+		try {
+			s = dis.readUTF();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(s);
+	}
+	
+}
+class Output implements Runnable{
+	DataOutputStream dos;
+	BufferedReader br;
+	public Output(DataOutputStream dos,BufferedReader br) {
+		this.dos = dos;
+		this.br = br;
+	}
+	@Override
+	public void run() {
+		String msg = null;
+		try {
+			msg = br.readLine();
+			dos.writeUTF(msg);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

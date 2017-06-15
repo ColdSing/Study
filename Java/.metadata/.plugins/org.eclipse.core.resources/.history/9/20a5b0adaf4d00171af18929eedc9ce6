@@ -1,0 +1,27 @@
+package TestStream;
+
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+
+public class TestObject implements java.io.Serializable {
+	private int code;
+	private transient String name;
+	public void printCode(){
+		System.out.println(code);
+	}
+	public void printName(){
+		System.out.println(name);
+	}
+	
+	public TestObject(int code, String name) {
+		this.code = code;
+		this.name = name;
+	}
+	public static void main(String[] args) {
+		TestObject to = new TestObject(1, "wx");
+		ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File("G:/ser"))));
+		
+	}
+
+}

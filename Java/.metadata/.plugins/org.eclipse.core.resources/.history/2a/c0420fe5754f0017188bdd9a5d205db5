@@ -1,0 +1,47 @@
+package chatroom;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Client {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		Socket client = new Socket("localhost",8888);
+		DataInputStream dis = new DataInputStream(client.getInputStream());
+		
+		
+	}
+	
+
+}
+
+class Input implements Runnable{
+	DataInputStream dis;
+	public Input(DataInputStream dis) {
+		this.dis = dis;
+	}
+	@Override
+	public void run() {
+		String s=null;
+		try {
+			s = dis.readUTF();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(s);
+	}
+	
+}
+class Output implements Runnable{
+	DataOutputStream dos;
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

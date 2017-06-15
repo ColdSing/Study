@@ -1,0 +1,35 @@
+package TestStream;
+
+import java.io.File;
+import java.io.IOException;
+
+public class LineOfCode {
+
+	public static int lineOfCode(File src) throws IOException{
+		if(src.isFile()){
+			count(src, dest);
+		}else if(dest.getAbsolutePath().contains(src.getAbsolutePath())){
+			System.out.println("父目录不能拷贝到子目录中");
+			return;
+		}else{
+			if(!dest.exists()){
+				dest.mkdirs();
+			}
+			File[] fileList = src.listFiles();
+			for(File f:fileList){
+				if(f.isDirectory()){
+					lineOfCode(f,new File(dest,f.getName()));
+				}else{
+					count(f, new File(dest,f.getName()));
+				}
+			}
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

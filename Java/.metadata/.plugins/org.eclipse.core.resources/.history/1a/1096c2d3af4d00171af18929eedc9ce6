@@ -1,0 +1,36 @@
+package TestStream;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class TestObject implements java.io.Serializable {
+	private int code;
+	private transient String name;
+	public void printCode(){
+		System.out.println(code);
+	}
+	public void printName(){
+		System.out.println(name);
+	}
+	
+	public TestObject(int code, String name) {
+		this.code = code;
+		this.name = name;
+	}
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+		TestObject to = new TestObject(1, "wx");
+		ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(new File("G:/ser"))));
+		oos.writeObject(to);
+		ObjectInputStream ois= new ObjectInputStream(new BufferedInputStream(new FileInputStream(new File("G:/ser")) ));
+		TestObject ro = (TestObject)ois.readObject();
+		ro.printCode();
+	}
+
+}

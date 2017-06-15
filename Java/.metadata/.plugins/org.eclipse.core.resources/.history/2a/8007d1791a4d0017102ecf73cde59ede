@@ -1,0 +1,11 @@
+import java.awt.Frame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Frame f = new Frame();
+		f.setSize(100, 100);
+		f.setVisible(true);
+		f.setLocation(100, 100);
+	}
+}

@@ -1,0 +1,23 @@
+package convert;
+
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
+public class Convert {
+	public static byte[] convertToByte(double n) throws IOException{
+		ByteArrayOutputStream bo = new ByteArrayOutputStream();
+		DataOutputStream dos = new DataOutputStream(bo);
+		dos.writeDouble(n);
+		byte[] temp=bo.toByteArray();
+		dos.flush();
+		bo.flush();
+		dos.close();
+		bo.close();
+		return temp;
+	}
+	public static void main(String[] args) {
+
+	}
+
+}

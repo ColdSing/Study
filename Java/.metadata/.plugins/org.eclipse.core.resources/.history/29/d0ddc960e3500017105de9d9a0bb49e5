@@ -1,0 +1,35 @@
+package MySever;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+public class Request {
+	public static final String CRLF="\r\n";
+	public static final String BLANK=" ";
+	
+	private BufferedReader br;
+	
+	Map<String,List<String>> clientInfo ;
+	private String allInfo;
+	
+	public Request(){
+		clientInfo = new HashMap<String,List<String>>();
+		allInfo="";
+	}
+	public Request(InputStream is){
+		this();
+		this.br=new BufferedReader(new InputStreamReader(is));
+	}
+	public Request(Socket client) throws IOException{
+		this(client.getInputStream());
+	}
+	
+	
+}

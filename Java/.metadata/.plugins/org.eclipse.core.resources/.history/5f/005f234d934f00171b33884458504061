@@ -1,0 +1,89 @@
+package chatroom;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Server {
+	List<MyTunnel> chatRoom = new ArrayList<MyTunnel>();
+	public static void main(String[] args) throws IOException {
+		new Server().start();
+	}
+	public void start() throws IOException{
+		ServerSocket sever = new ServerSocket(8888);
+		while(true){
+			Socket client = sever.accept();
+			MyTunnel mt = new MyTunnel(client);
+			chatRoom.add(mt);
+			new Thread(mt).start();
+			
+		}
+	}
+	private class MyTunnel implements Runnable{
+		private DataOutputStream dos;
+		private DataInputStream dis;
+		boolean isRunning=true;
+		private String name ;
+		public MyTunnel(Socket client) {
+			this.name="client"+name;
+			try {
+				dos = new DataOutputStream(client.getOutputStream());
+				dis = new DataInputStream(client.getInputStream());
+			} catch (IOException e) {
+				isRunning=false;
+				CloseUtil.Close.closeAll(dos,dis);
+			}
+		}
+		public void setName(String name){
+			this.name=name;
+		}
+		private String getMsg(){
+			String msg =null;
+			try {
+				msg=dis.readUTF();
+			} catch (IOException e) {
+				isRunning=false;
+				CloseUtil.Close.closeAll(dos,dis);
+				chatRoom.remove(this);
+			}
+			return msg;
+		}
+		public void send(String msg){
+			if(msg==null){
+				return;
+			}
+			try {
+				dos.writeUTF(msg);
+				dos.flush();
+			} catch (IOException e) {
+				isRunning=false;
+				CloseUtil.Close.closeAll(dos,dis);
+				chatRoom.remove(this);
+			}
+		}
+		public void sendAll(){
+			String msg = this.getMsg();
+			for(MyTunnel mt:chatRoom){
+				if(mt==this){
+					continue;
+				}
+				mt.send(this.name+":"+msg);
+			}
+		}
+		@Override
+		public void run() {
+			this.send("ª∂”≠ π”√£¨«Î ‰»ÎÍ«≥∆£∫");
+			String name = this.getMsg();
+			this.setName(name);
+			while(isRunning){
+				sendAll();
+			}
+		}
+		
+	}
+
+}

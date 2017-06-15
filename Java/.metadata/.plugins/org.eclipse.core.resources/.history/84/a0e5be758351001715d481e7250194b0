@@ -1,0 +1,19 @@
+package MySever;
+
+import java.net.Socket;
+
+public class Dispatch implements Runnable{
+	private Socket client;
+	
+	
+	public Dispatch(client) {
+
+		Request req = new Request(client);
+		Response rep = new Response(client);
+	}
+	@Override
+	public void run() {
+		
+	}
+
+}

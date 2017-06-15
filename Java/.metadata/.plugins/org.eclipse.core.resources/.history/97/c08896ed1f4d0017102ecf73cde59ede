@@ -1,0 +1,21 @@
+import java.awt.Frame;
+import java.awt.Graphics;
+
+
+public class Main extends Frame{
+	public void paint(Graphics g){
+		g.drawRoundRect(100, 100, 10, 10,5,15);
+		g.fillRect(200, 200, 10,10);
+	}
+	void launchFram(){
+		setSize(500,500);
+		setLocation(10,10);
+		setVisible(true);
+		
+	}
+	public static void main(String[] args) {
+		Main m = new Main();
+		m.launchFram();
+	}
+	
+}

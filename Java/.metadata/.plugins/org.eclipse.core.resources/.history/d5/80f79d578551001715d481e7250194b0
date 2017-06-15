@@ -1,0 +1,16 @@
+package MySever;
+
+import java.io.IOException;
+
+public class Severlet{
+	private Request req;
+	private Response rep;
+	
+	public Severlet(Request req, Response rep) throws IOException {
+		this.doGet(req,rep);
+	}
+	
+	public void doGet(Request req, Response rep){
+		rep.contentPrintln("");
+	}
+}

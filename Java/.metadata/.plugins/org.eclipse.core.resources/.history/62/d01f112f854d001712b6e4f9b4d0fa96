@@ -1,0 +1,23 @@
+package fileCopy;
+
+
+
+public class  ByteTransfer<T> {
+	
+	public static void main(String[] args) throws IOException {
+		File src =new File("G:/sxt1573.txt");
+		File dest = new File("D:/test.txt");
+		Reader rd = new BufferedReader(new FileReader(src));
+		Writer wr =new BufferedWriter(new FileWriter(dest));
+		char[] c = new char[10];
+		int len =0;
+		while(-1!=(len=rd.read(c))){
+			wr.write(c, 0, len);
+		}
+		wr.flush();
+		wr.close();
+		rd.close();
+		
+	}
+
+}

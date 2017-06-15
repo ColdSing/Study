@@ -1,0 +1,10 @@
+package TestStream;
+
+public class LineOfCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

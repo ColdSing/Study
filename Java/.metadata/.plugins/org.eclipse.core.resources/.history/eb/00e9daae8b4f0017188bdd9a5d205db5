@@ -1,0 +1,102 @@
+package chatroom;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Client {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		Socket client = new Socket("localhost",8888);
+		new Thread(new Input(client)).start();;
+		new Thread(new Output(client)).start();;
+	}
+	
+
+}
+
+class Input implements Runnable{
+	DataInputStream dis;
+	boolean isRunning = true;
+	public Input(Socket client) {
+		try {
+			dis=new DataInputStream(client.getInputStream());
+		} catch (IOException e) {
+				CloseUtil.Close.closeAll(dis);
+				isRunning=false;
+		}
+	}
+	private String getMsg(){
+		String msg=null;
+		try {
+			msg=dis.readUTF();
+		} catch (IOException e) {
+			CloseUtil.Close.closeAll(dis);
+			isRunning=false;
+		}
+		return msg;
+	}
+	public void print(){
+		if(getMsg()==null){
+			return;
+		}
+		System.out.println(getMsg());
+	}
+	
+	@Override
+	public void run() {
+		while(isRunning){
+			print();
+		}
+	}
+	
+}
+class Output implements Runnable{
+	DataOutputStream dos;
+	BufferedReader br;
+	boolean isRunning = true;
+	public Output(Socket client) {
+		try {
+			this.dos = new DataOutputStream(client.getOutputStream());
+			this.br = new BufferedReader(new InputStreamReader(System.in));
+		} catch (IOException e) {
+			CloseUtil.Close.closeAll(dos,br);
+			isRunning=false;
+		}
+		
+	}
+	private String getMsg(){
+		String msg = null;
+		try {
+			msg = br.readLine();
+		} catch (IOException e) {
+			CloseUtil.Close.closeAll(dos,br);
+			isRunning=false;
+		}
+		return msg;
+	}
+	public void send(){
+		String msg = getMsg();
+		try {
+			if(msg!=null){
+				dos.writeUTF(msg);
+			}
+		} catch (IOException e) {
+			CloseUtil.Close.closeAll(dos,br);
+			isRunning=false;
+		}
+	}
+	
+	@Override
+	public void run() {
+		while(isRunning){	
+			send();
+		}
+		
+	}
+	
+}

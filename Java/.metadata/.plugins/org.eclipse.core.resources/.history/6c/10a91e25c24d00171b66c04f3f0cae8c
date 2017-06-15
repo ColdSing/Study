@@ -1,0 +1,32 @@
+import java.awt.Frame;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Scanner;
+
+
+public class Main extends Frame{
+	
+	public static void main(String[] args) {
+		String[] strs = new String[10];
+		for(int i=0;i<10;i++){
+			strs[i]=""+i;
+		}
+		InputStream is =System.in;
+		Scanner in = new Scanner(is);
+		String s= in.nextLine();
+		boolean flag=false;
+		for(int i=0;i<10;i++){
+			if(strs[i].equals(s)){
+				flag=true;
+				break;
+			}
+		}
+		if(flag){
+			System.out.println("Yes");
+		}else{
+			System.out.println("No");
+		}
+	}
+	
+}

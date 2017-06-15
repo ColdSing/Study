@@ -1,0 +1,16 @@
+package TestStream;
+
+public class TestObject {
+	private int code;
+	private transient String name;
+	public void printCode(){
+		System.out.println(code);
+	}
+	public void printName(){
+		System.out.println(name);
+	}
+	public static void main(String[] args) {
+
+	}
+
+}

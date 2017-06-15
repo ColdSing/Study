@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fileSplit/src/fileSplit&apos; to &apos;fileSplitAndBination&apos;" description="Rename resource &apos;fileSplit&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/fileSplit" name="fileSplitAndBination" stamp="1496903664506" updateReferences="true"/>
+</session>

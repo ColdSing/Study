@@ -1,0 +1,62 @@
+package chatroom;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Server {
+	List<MyTunnel> chatRoom = new ArrayList<MyTunnel>();
+	public static void main(String[] args) throws IOException {
+		ServerSocket sever = new ServerSocket(8888);
+		Socket client =  sever.accept();
+		
+		
+	
+	}
+	private class MyTunnel implements Runnable{
+		private DataOutputStream dos;
+		private DataInputStream dis;
+		boolean isRunning=true;
+		public MyTunnel(Socket client) {
+			try {
+				dos = new DataOutputStream(client.getOutputStream());
+				dis = new DataInputStream(client.getInputStream());
+			} catch (IOException e) {
+				isRunning=false;
+				CloseUtil.Close.closeAll(dos,dis);
+			}
+		}
+		private String getMsg(){
+			String msg =null;
+			try {
+				msg=dis.readUTF();
+			} catch (IOException e) {
+				isRunning=false;
+				CloseUtil.Close.closeAll(dos,dis);
+			}
+			return msg;
+		}
+		public void send(){
+			dos.writeUTF(getMsg());
+		}
+		public void sendAll(){
+			for(MyTunnel mt:chatRoom){
+				if(mt==this){
+					continue;
+				}
+				
+			}
+		}
+		
+		@Override
+		public void run() {
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,26 @@
+package MySever;
+
+import java.io.IOException;
+import java.net.Socket;
+
+public class Dispatch implements Runnable{
+	private Socket client;
+	
+	
+	public Dispatch(Socket client) {
+
+		try {
+			Request req = new Request(client);
+			Response rep = new Response(client);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	@Override
+	public void run() {
+		
+	}
+
+}

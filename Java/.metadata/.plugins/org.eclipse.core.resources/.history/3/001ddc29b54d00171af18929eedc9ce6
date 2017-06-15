@@ -1,0 +1,36 @@
+package TestStream;
+
+import java.io.File;
+import java.io.IOException;
+
+public class LineOfCode {
+
+	public  int lineOfCode(File src) throws IOException{
+		int sum=0;
+		if(src.isFile()){
+			sum+=count(src);
+		}
+		else
+		{
+			File[] fileList = src.listFiles();
+			for(File f:fileList){
+				if(f.isDirectory()){
+					sum+=lineOfCode(f);
+				}else{
+					sum+=count(f);
+				}
+			}
+		}
+		return sum;
+	}
+	public  int count(File src){
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

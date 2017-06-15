@@ -1,0 +1,8 @@
+package MySever;
+
+public class Severlet {
+	
+	rep.contentPrintln("<html><head><title>HTTPÏìÓ¦Ê¾Àı</title>");
+	rep.contentPrintln("</head><body>Hello,"+req.getClientValue("username")+"</body></html>");
+	rep.pushToClient(200);
+}

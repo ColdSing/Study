@@ -1,0 +1,36 @@
+package MySever2;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Sever {
+	private ServerSocket sever;
+	
+	private boolean isRunning=true;
+	public void start(){
+		try {
+			sever = new ServerSocket(8888);
+			contact();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void contact() throws IOException{
+		while(isRunning){
+			Socket client =sever.accept();
+			new Thread(new Dispatch(client)).start();
+		}
+		
+	}
+	public void stop(){
+		
+	}
+	public static void main(String[] args) {
+		Sever sever = new Sever();
+		sever.start();
+	}
+
+}
+

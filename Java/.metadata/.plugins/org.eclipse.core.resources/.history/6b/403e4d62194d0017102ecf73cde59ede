@@ -1,0 +1,13 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		while(true){
+			int n = (int)(Math.random()*101);
+			System.out.println(n);
+			if(n==88){
+				break;
+			}
+		}
+	}
+}

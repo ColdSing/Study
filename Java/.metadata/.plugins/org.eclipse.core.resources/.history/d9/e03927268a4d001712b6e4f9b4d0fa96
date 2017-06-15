@@ -1,0 +1,12 @@
+package fileCopy;
+
+
+
+public class  ByteTransfer<T> {
+	
+	public static void main(String[] args) throws IOException {
+		
+		
+	}
+
+}
