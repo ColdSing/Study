@@ -1,0 +1,27 @@
+package wrapclass;
+
+public class Main {
+    public static void main(String[] args) {
+        
+    }
+}
+
+class Cell{
+	private boolean isalive;
+	
+	public Cell(boolean isalive) {
+		this.isalive=isalive;
+	}
+	public void die(){
+		this.isalive=false;
+	}
+	public void reborn(){
+		this.isalive=true;
+	}
+}
+
+class CellGrids{
+	private int columns;//ÁÐ
+	private int rows;//ÐÐ
+	
+}

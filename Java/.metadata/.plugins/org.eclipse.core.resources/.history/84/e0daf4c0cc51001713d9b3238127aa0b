@@ -1,0 +1,13 @@
+package MySever2;
+
+import java.util.HashMap;
+
+public class WebApp {
+	private static SeverletContent slc;
+	static{
+		slc = new SeverletContent();
+		HashMap urlMap = (HashMap)slc.getUrlMap();
+		HashMap sevMap = (HashMap)slc.getSevMap();
+		
+	}
+}

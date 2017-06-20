@@ -2,24 +2,14 @@ package MySever2;
 
 import java.io.IOException;
 
-public class Severlet{
-	private Request req;
-	private Response rep;
+public abstract class Severlet{
 	
-	public Severlet(Request req, Response rep) throws IOException {
-		this.doGet(req,rep);
+	public void doSever(Request req, Response rep){
+		doGet(req,rep);
+		doPost(req,rep);
 	}
 	
-	public void doGet(Request req, Response rep){
-		rep.contentPrintln("<html><head><title>∑Á‰Ï‰Ï</title>");
-		rep.contentPrintln("</head><body>");
-		rep.contentPrintln("ª∂”≠£∫"+req.getClientValue("username")+"ªÿ¿¥");
-		rep.contentPrintln("</body></html>");
-		try {
-			rep.pushToClient(200);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	public abstract void doGet(Request req, Response rep);
+	public abstract void doPost(Request req, Response rep);
+	
 }

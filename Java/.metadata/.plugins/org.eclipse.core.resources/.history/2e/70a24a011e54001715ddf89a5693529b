@@ -1,0 +1,15 @@
+
+public class TestJVM {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+class A{
+	public static int a_int =200;
+	{
+		System.out.println("AÓï¾ä¿é a_int :"+a_int);
+	}
+}

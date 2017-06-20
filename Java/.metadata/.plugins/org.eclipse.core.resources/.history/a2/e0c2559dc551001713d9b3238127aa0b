@@ -1,0 +1,5 @@
+package MySever2;
+
+public class LoginSeverlet extends Severlet{
+
+}

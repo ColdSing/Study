@@ -1,0 +1,15 @@
+package com.fxx.test;
+
+@FxxTable(value = "tb_student")
+public class Demo1 {
+	@FxxField(cloumName = "id", length = 10, type = "int")
+	private int id;
+	@FxxField(cloumName = "sname", length = 10, type = "varchar")
+	private String studentName;
+	@FxxField(cloumName = "age", length = 3, type = "int")
+	private int age;
+	public static void main(String[] args) {
+		
+	}
+
+}

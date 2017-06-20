@@ -1,0 +1,15 @@
+package com.fxx.test;
+
+public class TestReflect {
+
+	public static void main(String[] args) {
+		String path = "com.fxx.test.Demo1";
+		try {
+			Class clazz = Class.forName(path);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

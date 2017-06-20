@@ -24,7 +24,7 @@
 		<item value="574" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="749" key="DIALOG_HEIGHT"/>
-		<item value="605" key="DIALOG_X_ORIGIN"/>
+		<item value="347" key="DIALOG_X_ORIGIN"/>
 		<item value="72" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="SourceActionDialog.constructors">
@@ -101,6 +101,20 @@
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+	</section>
+	<section name="NewAnnotationWizardPage">
+		<item value="false" key="add_documented"/>
+		<section name="AddTarget">
+			<item value="false" key="enabled"/>
+			<list key="selectedEnums">
+			</list>
+		</section>
+		<section name="AddRetention">
+			<item value="false" key="enabled"/>
+			<list key="selectedEnums">
+				<item value="CLASS"/>
+			</list>
+		</section>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="582" key="DIALOG_WIDTH"/>

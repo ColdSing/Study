@@ -1,0 +1,33 @@
+package com.fxx.test;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+public class TestReflect {
+
+	public static void main(String[] args) {
+		String path = "com.fxx.test.Demo1";
+		try {
+			Class clazz = Class.forName(path);
+			
+			System.out.println(clazz.getSimpleName());
+			Field[] f= clazz.getDeclaredFields();
+			for(Field temp:f){
+				System.out.println(temp);
+			}
+			Method[] m = clazz.getDeclaredMethods();
+			try {
+				Method m1= clazz.getMethod("setId", int.class);
+				System.out.println(m1);
+			} catch (NoSuchMethodException | SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

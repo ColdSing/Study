@@ -1,0 +1,15 @@
+package wrapclass;
+
+public class Wrapper {
+    String s;
+    static class Inner {
+        void testMethod() {
+            
+        }
+    }
+    public static void main(String[] argv) {
+        Inner i = new Inner();
+        i.testMethod();
+        System.out.println();
+    }
+}

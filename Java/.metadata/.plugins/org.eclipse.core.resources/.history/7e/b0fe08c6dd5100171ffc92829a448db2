@@ -1,0 +1,34 @@
+package MySever2;
+
+import java.util.HashMap;
+/**
+ * 构建url同Severlet的对应关系
+ * 并提供通过url找到对应Severlet方法
+ * @author 风潇潇
+ *
+ */
+public class WebApp {
+	private static SeverletContent slc;
+	/**
+	 * 静态代码块，在调用类时自动执行
+	 */
+	static{
+		slc = new SeverletContent();
+		HashMap<String,String> urlMap = (HashMap)slc.getUrlMap();
+		HashMap<String,Severlet> sevMap = (HashMap)slc.getSevMap();
+		urlMap.put("/log", "login");
+		urlMap.put("/login", "login");
+		urlMap.put("/reg", "regist");
+		urlMap.put("/regist", "regist");
+		sevMap.put("login",new LoginSeverlet());
+		sevMap.put("regist", new RegistSeverlet());
+	}
+	
+	public static Severlet getSeverlet(String url){
+		if(null==url||(url.trim()).equals("")){
+			return null;
+		}
+		return slc.getSevMap().get(slc.getUrlMap().get(url));
+		
+	}
+}

@@ -1,0 +1,40 @@
+package wrapclass;
+
+public class Main {
+    public static void main(String[] args) {
+        
+    }
+}
+
+class Cell{
+	private boolean isalive;
+	
+	public Cell(boolean isalive) {
+		this.isalive=isalive;
+	}
+	public void die(){
+		this.isalive=false;
+	}
+	public void reborn(){
+		this.isalive=true;
+	}
+}
+
+class CellGrids{
+	private int columns;//ÁÐ
+	private int rows;//ÐÐ
+	Cell[][] cells;
+	public CellGrids(int columns, int rows) {
+		this.columns = columns;
+		this.rows = rows;
+		this.cells = new Cell[rows][columns];
+		cellInitial();
+	}
+	private  void cellInitial(){
+		for(int i=0;i<rows;i++){
+			for(int j=0;j<columns;j++){
+				cells[i][j]=new Cell(false);
+			}
+		}
+	}
+}

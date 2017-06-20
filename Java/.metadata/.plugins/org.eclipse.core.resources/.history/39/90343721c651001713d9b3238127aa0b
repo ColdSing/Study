@@ -1,0 +1,20 @@
+package MySever2;
+
+import java.io.IOException;
+
+public abstract class Severlet{
+	protected Request req;
+	protected Response rep;
+	
+	public Severlet(Request req, Response rep) throws IOException {
+		
+	}
+	
+	public void doGet(){
+		
+	}
+	public void doPost(){
+		
+	}
+	
+}

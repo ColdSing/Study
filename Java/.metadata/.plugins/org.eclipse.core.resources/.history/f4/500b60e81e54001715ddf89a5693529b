@@ -1,0 +1,55 @@
+
+public class TestJVM {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+class A{
+	public static int a_int =200;
+	private int test = 10;
+	{
+		System.out.println("AÓï¾ä¿é a_int :"+a_int);
+		System.out.println("AÓï¾ä¿é test :"+test);
+		test = 20;
+	}
+	
+	static{
+		System.out.println("A¾²Ì¬Óï¾ä¿é a_int :"+a_int);
+		a_int =300;
+		//test = 10;·Ç¾²Ì¬±äÁ¿ÎŞ·¨Ê¹ÓÃ
+	}
+	
+	public A(){
+		System.out.println("A¹¹ÔìÆ÷ a_int :"+a_int);
+		a_int =400;
+		System.out.println("A¹¹ÔìÆ÷ test :"+test);
+		test = 30;
+	}
+}
+
+
+class b extends A{
+	public static int b_int =200;
+	private int b_test = 10;
+	{
+		System.out.println("BÓï¾ä¿éb_int :"+b_int);
+		System.out.println("BÓï¾ä¿é test :"+b_test);
+		b_test = 20;
+	}
+	
+	static{
+		System.out.println("B¾²Ì¬Óï¾ä¿é b_int :"+b_int);
+		b_int =300;
+	}
+	
+	public b(){
+		System.out.println("B¹¹ÔìÆ÷ b_int :"+b_int);
+		b_int =400;
+		System.out.println("B¹¹ÔìÆ÷ test :"+b_test);
+		b_test = 30;
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.fxx.test;
+
+public @interface FxxTable {
+
+}

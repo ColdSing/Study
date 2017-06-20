@@ -36,7 +36,7 @@ public class Request {
 		byte[] flush = new byte[20480];
 		int len = is.read(flush);
 		if(-1==len){
-			allInfo=null;
+			return;
 		}
 		allInfo = new String(flush,0,len);
 //		byte[] flush = new byte[1024];
@@ -63,7 +63,7 @@ public class Request {
 			return;
 		}
 		method = (allInfo.substring(0, allInfo.indexOf('/'))).trim();
-		String urlStr = (allInfo.substring(allInfo.indexOf('/')+1,allInfo.indexOf("HTTP/"))).trim();
+		String urlStr = (allInfo.substring(allInfo.indexOf('/'),allInfo.indexOf("HTTP/"))).trim();
 		if(method.equals("GET")){
 			if(urlStr.contains("?")){
 				url = (urlStr.substring(0,urlStr.indexOf('?'))).trim();

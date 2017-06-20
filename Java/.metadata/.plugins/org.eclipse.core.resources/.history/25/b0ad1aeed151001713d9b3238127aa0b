@@ -1,0 +1,43 @@
+package MySever2;
+
+import java.io.IOException;
+
+public class LoginSeverlet extends Severlet{
+	
+	
+	@Override
+	public void doSever(Request req, Response rep) {
+		if(req.getClientValue("username")=="fxx"&&req.getClientValue("password")=="123456"){
+			this.doGet(req, rep);
+			this.doPost(req, rep);
+		}
+		else{
+			rep.
+		}
+				
+	}
+
+	@Override
+	public void doGet(Request req, Response rep){
+		rep.contentPrintln("<html><head><title>登陆成功</title>");
+		rep.contentPrintln("</head><body>");
+		rep.contentPrintln("欢迎："+req.getClientValue("username")+"回来");
+		rep.contentPrintln("</body></html>");
+		try {
+			rep.pushToClient(200);
+		} catch (IOException e) {
+			try {
+				rep.pushToClient(500);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
+	}
+	
+	@Override
+	public void doPost(Request req, Response rep) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
