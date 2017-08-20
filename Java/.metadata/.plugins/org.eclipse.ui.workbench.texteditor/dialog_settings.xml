@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="protected" key="selection"/>
+		<item value="Category" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="product"/>
+			<item value="category"/>
+			<item value="&quot;"/>
+			<item value="package com.fxx.regist;"/>
+			<item value="dbmd"/>
 			<item value="private"/>
 			<item value="sun"/>
 			<item value="paint"/>
@@ -16,6 +21,11 @@
 			<item value="second"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Category"/>
+			<item value="Product"/>
+			<item value="product"/>
+			<item value="&apos;"/>
+			<item value="dmd"/>
 			<item value="protected"/>
 			<item value="earth"/>
 			<item value="/"/>

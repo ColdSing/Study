@@ -16,9 +16,14 @@ public class RegistSeverlet extends Severlet {
 
 	@Override
 	public void doPost(Request req, Response rep) {
+		boolean flag = saveDate(req, rep);
 		rep.contentPrintln("<html><head><title>·çäìäì</title>");
 		rep.contentPrintln("</head><body>");
-		rep.contentPrintln("¸ÐÐ»"+req.getClientValue("username")+"×¢²á");
+		if(flag){
+			rep.contentPrintln("¸ÐÐ»"+req.getClientValue("username")+"×¢²á");
+		}else{
+			rep.contentPrintln("×¢²áÊ§°Ü£¬ÓÃ»§ÒÑ´æÔÚ");
+		}
 		rep.contentPrintln("</body></html>");
 		try {
 			rep.pushToClient(200);
@@ -28,6 +33,17 @@ public class RegistSeverlet extends Severlet {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
+		}
+	}
+	
+	public boolean saveDate(Request req, Response rep){
+		String uname = req.getClientValue("username");
+		String pwd = req.getClientValue("password");
+		if(JDBCUtil.checkUser(uname)){
+			return false;
+		}else{
+			JDBCUtil.saveUser(uname, pwd);
+			return true;
 		}
 	}
 

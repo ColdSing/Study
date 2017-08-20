@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app SYSTEM "web-app_2_3.dtd">
+<web-app>
+	<servlet>
+		<servlet-name>MyServlet1</servlet-name>
+		<servlet-class>com.fxx.xml.dom4j.MyServlet1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServlet1</servlet-name>
+		<url-pattern>/hello1</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>MyServlet2</servlet-name>
+		<servlet-class>com.fxx.xml.dom4j.MyServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServlet2</servlet-name>
+		<url-pattern>/hello2</url-pattern>
+	</servlet-mapping>
+</web-app>

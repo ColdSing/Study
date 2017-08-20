@@ -22,6 +22,8 @@ public class WebApp {
 		urlMap.put("/regist", "regist");
 		sevMap.put("login","MySever2.LoginSeverlet");
 		sevMap.put("regist","MySever2.RegistSeverlet");
+		sevMap.put("clc","MySever2.ClcSeverlet");
+		urlMap.put("/clc", "clc");
 	}
 	
 	public static Severlet getSeverlet(String url) throws InstantiationException, IllegalAccessException, ClassNotFoundException{

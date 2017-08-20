@@ -14,7 +14,6 @@ public class Sever {
 	private boolean isRunning=true;
 	public void start(){
 		this.start(8888);
-		
 	}
 	/**
 	 * 指定端口

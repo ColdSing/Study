@@ -11,7 +11,7 @@ public class LoginSeverlet extends Severlet{
 	
 	@Override
 	public void doSever(Request req, Response rep) {
-		if((req.getClientValue("username")).equals("fxx")&&(req.getClientValue("password")).equals("123456")){
+		if(JDBCUtil.checkPwd(req.getClientValue("username"),req.getClientValue("password"))){
 			this.doGet(req, rep);
 			this.doPost(req, rep);
 		}

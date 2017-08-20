@@ -2,7 +2,6 @@ package MySever2;
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Map;
 /**
  * 与客户端进行消息传递的线程体
  * @author 风潇潇

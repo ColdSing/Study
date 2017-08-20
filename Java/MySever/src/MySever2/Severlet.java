@@ -1,6 +1,5 @@
 package MySever2;
 
-import java.io.IOException;
 
 public abstract class Severlet{
 	

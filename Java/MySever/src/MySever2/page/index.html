@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>计算器</title>
+		<script type="text/javascript">
+			var str ="";
+			var powflag=false;
+			var getNum=function(a){
+				if(a!="="&&a!="^"&&!powflag){
+					str=str.concat(a);
+					display(str);
+				}else if(a=="^"){
+					display(str.concat(a));
+					str="Math.pow((x),y)".replace("x",str);
+					powflag=true;
+				}else if(powflag){
+					display(str.substring(str.indexOf("pow")+5,str.indexOf("y")-2).concat("^").concat(a));
+					str=str.replace("y",a);
+					powflag=false;
+				}else if(a=="="){
+					try{
+						str=eval(str);
+						display(str);
+					}catch(exception) {
+    					display("ERROR");
+    				}finally{
+    					str="";
+    				}
+				}
+			}
+			var display=function(a){
+				 document.getElementById("output").innerHTML=a;
+			}
+		</script>
+		<style type="text/css">
+			input{
+				width: 50px;
+				height:50px;
+				border-radius: 5px;
+			}
+			#output{
+				border: solid 1px ;
+				height:50px;
+				width: 210px;
+				line-height: 50px;
+				border-radius: 5px;
+				background-color:gainsboro ;
+				padding-left: 10px;
+				margin-left: 9px;
+			}
+			#all{
+				width:240px;
+				margin:0 auto;
+				border:solid 1px;
+				border-radius:10px ;
+				background-color: darkgray ;
+			}
+			#bottom{
+				margin-left: 9px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="all">
+				<h3 align="center">计算器</h3>
+				<p id="output"></p>
+				<div id="bottom">
+					<input type="button" name="" id="" value="1" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="2" onclick="getNum(this.value)"/>
+					<input type="button" name="" id="" value="3" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="=" onclick="getNum(this.value)" /><br /><br />
+					<input type="button" name="" id="" value="4" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="5" onclick="getNum(this.value)"/>
+					<input type="button" name="" id="" value="6" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="." onclick="getNum(this.value)" /><br /><br />
+					<input type="button" name="" id="" value="7" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="8" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="9" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="0" onclick="getNum(this.value)" /><br /><br />
+					<input type="button" name="" id="" value="+" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="-" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="*" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="/" onclick="getNum(this.value)" /><br /><br />
+					<input type="button" name="" id="" value="(" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value=")" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="^" onclick="getNum(this.value)" />
+					<input type="button" name="" id="" value="%" onclick="getNum(this.value)" /><br /><br />
+					
+				</div>
+		</div>
+	</body>
+</html>

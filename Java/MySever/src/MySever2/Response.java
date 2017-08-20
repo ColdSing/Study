@@ -18,6 +18,7 @@ public class Response {
 	boolean severFault = false;
 	
 	private BufferedWriter bw;
+	
 	public Response(){
 		this.stateline = new StringBuilder();
 		ResponseHead = new StringBuilder();

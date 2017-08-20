@@ -1,5 +1,0 @@
-package MySever2;
-
-public class RegistSeverlet extends Severlet {
-
-}
