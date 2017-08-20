@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<!--声明文档兼容模式，表示使用IE浏览器的最新模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--设置视口的宽度(值为设备的理想宽度)，页面初始缩放值<理想宽度/可见宽度>-->
+		<!--视口的作用：在移动浏览器中，当页面宽度超出设备，浏览器内部虚拟的一个页面容器，会将页面缩放到设备这么大来展示-->
+		<!--width 	设置layout viewport  的宽度，为一个正整数，或字符串"width-device"(表示采用设备的宽度)
+			initial-scale 	设置页面的初始缩放值，为一个数字，可以带小数
+			minimum-scale 	允许用户的最小缩放值，为一个数字，可以带小数
+			maximum-scale 	允许用户的最大缩放值，为一个数字，可以带小数
+			height 	设置layout viewport  的高度，这个属性对我们并不重要，很少使用
+			user-scalable 	是否允许用户进行缩放，值为"no"或"yes", no 代表不允许，yes代表允许
+			如果设置"user-scalable=no",那么"minimum-scale"和"maximum-scale"无效
+		-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>商城首页</title>
+
+		<!-- 引入Bootstrap核心样式文件 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果，必须放置到web服务器中，暂时不必掌握 -->
+		<!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+      <!--二級菜單樣式-->
+		<style type="text/css">
+			.dropdown-submenu {
+				position: relative;
+			}
+			
+			.dropdown-submenu>.dropdown-menu {
+				top: 0;
+				left: 100%;
+				margin-top: -6px;
+				margin-left: -1px;
+				-webkit-border-radius: 0 6px 6px 6px;
+				-moz-border-radius: 0 6px 6px;
+				border-radius: 0 6px 6px 6px;
+			}
+			
+			.dropdown-submenu:hover>.dropdown-menu {
+				display: block;
+			}
+			
+			.dropdown-submenu>a:after {
+				display: block;
+				content: " ";
+				float: right;
+				width: 0;
+				height: 0;
+				border-color: transparent;
+				border-style: solid;
+				border-width: 5px 0 5px 5px;
+				border-left-color: #ccc;
+				margin-top: 5px;
+				margin-right: -10px;
+			}
+			
+			.dropdown-submenu:hover>a:after {
+				border-left-color: #fff;
+			}
+			
+			.dropdown-submenu.pull-left {
+				float: none;
+			}
+			
+			.dropdown-submenu.pull-left>.dropdown-menu {
+				left: -100%;
+				margin-left: 10px;
+				-webkit-border-radius: 6px 0 6px 6px;
+				-moz-border-radius: 6px 0 6px 6px;
+				border-radius: 6px 0 6px 6px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--loggo部分-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<img src="img/logo2.png" />
+				</div>
+				<div class="col-md-5">
+					<img src="img/header.png" />
+				</div>
+				<div class="col-md-3" style="padding-top: 15px; padding-left: 30px;">
+					<a href="#">登录</a>
+					<a href="#">注册</a>
+					<a href="#">购物车</a>
+				</div>
+			</div>
+			<div class="container" style="margin-top: 10px;">
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+							<a class="navbar-brand" href="#">首页</a>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="#">手机数码<span class="sr-only">(current)</span></a>
+								</li>
+								<li>
+									<a href="#">家用电器</a>
+								</li>
+								<li>
+									<a href="#">鞋靴箱包</a>
+								</li>
+								<li>
+									<a href="#">阅读图书</a>
+								</li>
+								<li>
+									<a href="#">生活用品</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">所有分类 <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">Action</a>
+										</li>
+										<li class="dropdown-submenu"> <a href="#">gao3</a>  
+								             <ul class="dropdown-menu pull-right">  
+								                  <li><a href="http://www.baidu.com">qiao1</a></li>  
+								                  <li><a href="#">qiao2</a></li>  
+								                  <li><a href="#">qiao3</a></li>  
+								             </ul>  
+								        </li>  
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li role="separator" class="divider"></li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-right">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form>
+
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+
+		<!--前端开发建议：网站优化时，除了立即需要工作的js存放在head外，将大部分JS文件放在页面的末尾-->
+
+		<!-- 引入jQuery核心js文件，必须放置在bootStrap.js前面！ -->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<!-- 引入BootStrap核心js文件 -->
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html>
